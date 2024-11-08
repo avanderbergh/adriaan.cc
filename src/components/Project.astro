@@ -1,0 +1,69 @@
+---
+import type { Project } from "../content/config";
+import Icon from "./Icon.astro";
+
+const { title, description, links } = Astro.props as Project;
+---
+
+<style>
+    .project {
+        container-type: inline-size;
+        container-name: project;
+        display: flex;
+        flex-direction: column;
+        border: 2px dashed var(--fg);
+        margin: -1px;
+        padding: var(--marginSize);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-size: clamp(1.5rem, 6cqi, 2.5rem);
+            letter-spacing: -2px;
+        }
+    }
+
+    .links {
+        display: flex;
+        gap: 11px;
+        align-items: center;
+    }
+
+    p {
+        font-size: clamp(1rem, 4cqi, 1.5rem);
+        line-height: 1.4;
+    }
+</style>
+
+<div class="project">
+    <div class="header">
+        <h2>{title}</h2>
+        {
+            links && (
+                <div class="links">
+                    {links.github && (
+                        <a
+                            href={links.github}
+                            aria-label={`View ${title} on GitHub`}
+                        >
+                            <Icon name="github" />
+                        </a>
+                    )}
+                    {links.youTube && (
+                        <a
+                            href={links.youTube}
+                            aria-label={`Watch ${title} demo on YouTube`}
+                        >
+                            <Icon name="youtube" />
+                        </a>
+                    )}
+                </div>
+            )
+        }
+    </div>
+    <p>{description}</p>
+</div>

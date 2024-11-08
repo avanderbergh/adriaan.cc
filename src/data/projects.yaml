@@ -1,0 +1,47 @@
+- slug: code-city
+  title: Code City
+  description: A cooperative game to help users learn coding, playable in both a web browser and Oculus Quest. Focuses on making coding fun and interactive, bridging VR and web experiences.
+  links:
+      github: https://github.com/avanderbergh/codecity
+      youTube: https://youtu.be/5dYGegt6MGk
+
+- slug: auto-cc
+  title: AutoCC
+  description: A tool for K12 schools that ensures guardians stay informed by automatically CCing them on student emails in Gmail. Simplifies communication between students, teachers, and guardians.
+
+- slug: lapsly
+  title: Lapsly
+  description: A tool for teachers to assess students' learning processes by creating time-lapse videos of their work. Helps teachers understand how students approach tasks, providing insights beyond the final product.
+  links:
+      youTube: https://youtu.be/WCCabk230Os
+
+- slug: alo-app
+  title: ALO App
+  description: A platform for students to discover and join extra learning opportunities offered by peers and teachers. Encourages collaborative learning and broadens educational experiences.
+  links:
+      github: https://github.com/avanderbergh/isd-alo
+
+- slug: managebac-api-library
+  title: ManageBac API Library
+  description: A PHP client library for the ManageBac API, built to streamline integration for schools using ManageBac.
+  links:
+      github: https://github.com/eduvo/PHP-API-Library
+
+- slug: overview
+  title: Overview
+  description: A tool for US school districts that visualizes learning outcomes across courses, helping educators make data-driven decisions to improve teaching and student results.
+  links:
+      github: https://github.com/avanderbergh/overview
+
+- slug: drive-companion
+  title: Drive Companion
+  description: A Google Drive integration tool for Schoology that improves usability beyond the default integration, making file sharing simpler and more effective for teachers and students.
+  links:
+      github: https://github.com/avanderbergh/drivecompanion
+      youTube: https://youtu.be/BpUHWLtnxaE
+
+- slug: gamifikator
+  title: Gamifikator
+  description: A web app for teachers on Schoology to gamify learning. Makes class activities more engaging by incorporating points and rewards for students.
+  links:
+      youTube: https://youtu.be/Zg4a9aDJaUY

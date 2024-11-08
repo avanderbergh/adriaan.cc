@@ -1,0 +1,92 @@
+---
+const perforation = "dashed #ddd 1px";
+const paper = "#ffffff";
+
+type Colors = "green" | "blue" | "pink" | "yellow";
+
+const colors: Record<Colors, string> = {
+    green: "#f0fff0",
+    blue: "#f0f2ff",
+    pink: "#fdf0ff",
+    yellow: "#fffde7",
+};
+
+interface Props {
+    id: string;
+    color: Colors;
+    title?: string;
+    rotation: number;
+}
+
+const { id, color, title, rotation } = Astro.props;
+
+const c = colors[color];
+---
+
+<style define:vars={{ perforation, paper, c }}>
+    .paper {
+        position: relative;
+        padding: var(--marginSize);
+        background: linear-gradient(var(--paper) 50%, var(--c) 50%);
+        background-size: 100% calc(var(--marginSize) * 2);
+        width: calc(100% - var(--marginSize) * 2);
+        max-width: 920px;
+        margin-bottom: var(--marginSize);
+    }
+
+    .paper::before,
+    .paper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        background: var(--paper);
+        background-image: radial-gradient(
+            circle,
+            var(--bg) 30%,
+            var(--paper) 31%
+        );
+        background-size: 10px 30px;
+        background-repeat: repeat-y;
+        background-position: center;
+        z-index: 1;
+    }
+
+    .paper::before {
+        left: calc(var(--marginSize) * -1);
+        border-right: var(--perforation);
+    }
+
+    .paper::after {
+        right: calc(var(--marginSize) * -1);
+        border-left: var(--perforation);
+    }
+
+    .title {
+        text-wrap: nowrap;
+        text-align: center;
+        margin: var(--marginSize);
+    }
+
+    footer {
+        padding: var(--marginSize);
+        display: flex;
+        justify-content: flex-end;
+        /* From 33px to 44px */
+        font-size: clamp(3rem, 2.5rem + 2vw, 3.5rem);
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+    }
+</style>
+
+<div class="paper" id={id} style={{ transform: `rotate(${rotation}deg)` }}>
+    {title && <h1 class="title">{title}</h1>}
+    <slot />
+    <footer>
+        <a href="#top" aria-label="Back to top">▲</a>
+    </footer>
+</div>

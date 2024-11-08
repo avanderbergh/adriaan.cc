@@ -1,0 +1,7 @@
+- id: github
+  type: github
+  url: https://github.com/avanderbergh
+
+- id: linkedin
+  type: linkedin
+  url: https://www.linkedin.com/in/avanderbergh

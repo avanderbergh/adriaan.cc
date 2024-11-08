@@ -1,0 +1,66 @@
+---
+import type { Experience } from "src/content/config";
+
+type Props = Experience;
+
+const { company, title, description, start, end, url, location } = Astro.props;
+---
+
+<div class="container">
+    <div class="heading">
+        <h2>{title}</h2>
+
+        <h3>
+            {
+                url ? (
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                        {company}
+                    </a>
+                ) : (
+                    company
+                )
+            }
+        </h3>
+    </div>
+    <div class="heading">
+        <p>
+            {location}
+        </p>
+
+        <p>{start} - {end || "present"}</p>
+    </div>
+    <ul>
+        {description.map((d) => <li>{d}</li>)}
+    </ul>
+</div>
+
+<style>
+    .container {
+        display: grid;
+        gap: 8px;
+        border: dashed 2px var(--fg);
+        margin: -1px;
+        padding: var(--marginSize);
+    }
+
+    .heading {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 8px;
+    }
+
+    a {
+        color: var(--fg);
+        text-decoration: underline dashed;
+    }
+
+    ul {
+        list-style: "▷";
+        margin-top: var(--marginSize);
+        padding: 11px 0;
+    }
+
+    li:not(:last-of-type) {
+        margin-bottom: 11px;
+    }
+</style>

@@ -1,0 +1,20 @@
+{
+  "name": "adriaan-cc",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.0.0-beta.6",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "prettier": "3.3.3",
+    "sharp": "^0.33.5"
+  }
+}

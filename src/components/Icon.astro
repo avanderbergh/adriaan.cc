@@ -1,0 +1,44 @@
+---
+type IconName = "youtube" | "github" | "linkedin";
+
+interface Props {
+    name: IconName;
+}
+
+const { name } = Astro.props;
+
+const paths: Record<IconName, string[]> = {
+    github: [
+        "M5 2H9V4H7V6H5V2ZM5 12H3V6H5V12ZM7 14H5V12H7V14ZM9 16V14H7V16H3V14H1V16H3V18H7V22H9V18H11V16H9ZM9 16V18H7V16H9ZM15 4V6H9V4H15ZM19 6H17V4H15V2H19V6ZM19 12V6H21V12H19ZM17 14V12H19V14H17ZM15 16V14H17V16H15ZM15 18H13V16H15V18ZM15 18H17V22H15V18Z",
+    ],
+    youtube: [
+        "M22 3H2V4H1V5H0V18H1V19H2V20H22V19H23V18H24V5H23V4H22V3ZM16 12V11H14V10H12V9H11V8H10V15H11V14H12V13H14V12H16Z",
+    ],
+    linkedin: [
+        "M8.75707 21V8.06687H19.3799V10.6143H22V21H19.0951V10.8663H11.6335V21H8.75707Z",
+        "M3 21V8.06687H5.87642V21H3ZM3 5.82737V3H5.87642V5.82737H3Z",
+    ],
+};
+
+const size = 33;
+---
+
+<svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    {
+        paths[name].map((d) => (
+            <path d={d} fill-rule="evenodd" clip-rule="evenodd" />
+        ))
+    }
+
+    <style>
+        path {
+            fill: var(--fg);
+        }
+    </style>
+</svg>

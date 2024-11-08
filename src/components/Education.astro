@@ -1,0 +1,36 @@
+---
+import type { Education } from "src/content/config";
+
+type Props = Education;
+
+const { institution, url, degree, field, start, end } = Astro.props;
+---
+
+<style>
+    .container {
+        border: dashed 2px var(--fg);
+        margin: -1px;
+        padding: var(--marginSize);
+    }
+    a {
+        color: var(--fg);
+        text-decoration: underline dashed;
+    }
+
+    .date-range {
+        margin-top: var(--marginSize);
+    }
+</style>
+
+<div class="container">
+    <h2>
+        <a href={url} target="_blank" rel="noopener noreferrer">{institution}</a
+        >
+    </h2>
+    <p>
+        {degree}, {field}
+    </p>
+    <p class="date-range">
+        {start} - {end}
+    </p>
+</div>

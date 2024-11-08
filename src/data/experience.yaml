@@ -1,0 +1,75 @@
+- slug: q15
+  title: Founder & Lead Instructor
+  company: Q15
+  url: https://q15.co/
+  location: Düsseldorf, Germany
+  start: Nov 1, 2023
+  end: Present
+  description:
+      - Founded Q15 to help developers integrate AI into web applications, developing a unique full-stack AI course.
+      - Developed a 4-month course covering AI models, web integration, Next.js, SQL, and CI/CD practices, designed to equip developers with modern AI integration skills.
+      - Created 'octocoach,' an MVP platform to manage coaching and streamline learning interactions.
+      - Navigated the process to get the company AZAV accredited, ensuring compliance with education standards.
+      - Managed marketing efforts, including Meta and LinkedIn ads, to promote the course, learning firsthand the challenges of marketing niche tech education.
+
+- slug: talent-digital
+  title: Senior Software Engineer
+  company: talent::digital
+  url: https://talentdigital.eu/
+  location: Düsseldorf, Germany
+  start: Jan 1, 2021
+  end: Feb 28, 2022
+  description:
+      - Built and maintained a SaaS product for the education sector, focusing on React and JavaScript for the front end.
+      - Conducted code reviews to ensure quality and mentor junior developers.
+      - Planned new features with the CTO, balancing user needs with technical feasibility.
+      - Managed the CI pipeline and worked closely with DevOps to keep deployments smooth.
+      - Explored new technologies like Go and Rust to expand my skill set.
+
+- slug: supercode
+  title: Lead Software Engineer & Instructor
+  company: SuperCode
+  url: https://www.super-code.de/
+  location: Düsseldorf, Germany
+  start: Jan 1, 2020
+  end: Dec 31, 2020
+  description:
+      - Taught front-end web development (HTML, CSS, JavaScript, React) in both in-person and online formats.
+      - Trained other instructors in effective teaching techniques.
+      - Built an in-house web app using Sapper, which combined teaching and development.
+
+- slug: engagenie-inc
+  title: Founder & Software Architect
+  company: Engagenie, Inc.
+  location: US (remote)
+  start: Apr 1, 2016
+  end: Dec 31, 2020
+  description:
+      - Built a web app that reached 10,000 users in the first year.
+      - Developed custom software for schools, combining my experience in education and tech.
+      - Handled customer support, learning the value of user feedback and empathy in design.
+
+- slug: international-school-of-dusseldorf
+  title: Technology Integration Specialist & Educator
+  company: International School of Düsseldorf
+  url: https://www.isdedu.de/
+  location: Düsseldorf, Germany
+  start: Aug 1, 2011
+  end: Dec 31, 2019
+  description:
+      - Led the rollout of a 1-to-1 laptop program, making tech accessible for teachers and students.
+      - Created a Computational Thinking Curriculum to help students think like problem-solvers, not just coders.
+      - Developed a game design course using Blender, Unity, and C#.
+      - Built in-house web apps to streamline school processes and improve efficiency.
+
+- slug: dexani
+  title: IT Support Specialist
+  company: Dexani
+  url: https://www.dexani.co.za/
+  location: Johannesburg, South Africa
+  start: May 1, 2008
+  end: Nov 30, 2008
+  description:
+      - Provided IT support for two insurance companies, managing backups, Exchange servers, Active Directory, and network issues.
+      - Learned to juggle different tasks across two sites, providing both tech solutions and customer support.
+      - Handled everything from user issues to complex infrastructure, building a strong foundation in problem-solving.

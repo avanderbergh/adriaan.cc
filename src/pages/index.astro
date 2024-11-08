@@ -1,0 +1,94 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import "@styles/global.css";
+
+import { Image } from "astro:assets";
+import adriaan from "@images/adriaan.png";
+import { Content as Intro } from "@data/intro.md";
+import Center from "@components/Center.astro";
+import { getCollection } from "astro:content";
+import Experience from "@components/Experience.astro";
+import Project from "@components/Project.astro";
+import Page from "@components/Page.astro";
+import Navbar from "@components/Navbar.astro";
+import Education from "@components/Education.astro";
+import Icon from "@components/Icon.astro";
+import Footer from "@components/Footer.astro";
+
+const experience = await getCollection("experience");
+const projects = await getCollection("projects");
+const education = await getCollection("education");
+const contacts = await getCollection("contacts");
+
+const title = "Adriaan.cc";
+const description =
+    "Adriaan van der Bergh's personal website showcasing his experience, projects, and more.";
+---
+
+<BaseLayout title={title} description={description}>
+    <Navbar />
+    <Page id="about" title={title} color="green" rotation={1}>
+        <Center>
+            <Image
+                src={adriaan}
+                alt="Adriaan van der Bergh"
+                loading="eager"
+                style={{
+                    opacity: 0.7,
+                    width: "100%",
+                    objectFit: "contain",
+                }}
+            />
+            <div class="contacts">
+                {
+                    contacts.map(({ data: { type, url } }) => (
+                        <a href={url} target="_blank" aria-label={type}>
+                            <Icon name={type} />
+                        </a>
+                    ))
+                }
+            </div>
+        </Center>
+
+        <section class="intro">
+            <Intro />
+        </section>
+    </Page>
+
+    <Page id="education" color="yellow" title="Education" rotation={1}>
+        {education.map(({ data }) => <Education {...data} />)}
+    </Page>
+
+    <Page id="experience" color="blue" title="Experience" rotation={-1}>
+        {experience.map(({ data }) => <Experience {...data} />)}
+    </Page>
+
+    <Page id="projects" color="pink" title="Projects" rotation={0.8}>
+        <div class="projects-grid">
+            {projects.map(({ data }) => <Project {...data} />)}
+        </div>
+    </Page>
+
+    <Footer />
+
+    <style>
+        .intro {
+            margin-top: calc(var(--marginSize) * 3);
+            p {
+                margin: var(--marginSize) 0;
+            }
+        }
+
+        .contacts {
+            margin: var(--marginSize);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+    </style>
+</BaseLayout>
