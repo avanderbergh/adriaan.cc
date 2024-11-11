@@ -1,13 +1,15 @@
+- slug: octocoach
+  title: OctoCoach
+  description: A TypeScript-based platform for managing AZAV coaching businesses. This monorepo contains multiple applications and packages that work together to provide a comprehensive coaching management solution.
+  links:
+      github: https://github.com/octocoach/octocoach
+
 - slug: code-city
   title: Code City
   description: A cooperative game to help users learn coding, playable in both a web browser and Oculus Quest. Focuses on making coding fun and interactive, bridging VR and web experiences.
   links:
       github: https://github.com/avanderbergh/codecity
       youTube: https://youtu.be/5dYGegt6MGk
-
-- slug: auto-cc
-  title: AutoCC
-  description: A tool for K12 schools that ensures guardians stay informed by automatically CCing them on student emails in Gmail. Simplifies communication between students, teachers, and guardians.
 
 - slug: lapsly
   title: Lapsly
