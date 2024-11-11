@@ -1,0 +1,9 @@
+name = "adriaan-cc"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-11-11"
+
+[vars]
+PNPM_VERSION = "9.12.3"
+
+[env.production.vars]
+PNPM_VERSION = "9.12.3"
