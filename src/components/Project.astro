@@ -49,6 +49,8 @@ const { title, description, links } = Astro.props as Project;
                         <a
                             href={links.github}
                             aria-label={`View ${title} on GitHub`}
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <Icon name="github" />
                         </a>
@@ -57,6 +59,7 @@ const { title, description, links } = Astro.props as Project;
                         <a
                             href={links.youTube}
                             aria-label={`Watch ${title} demo on YouTube`}
+                            rel="noopener noreferrer"
                         >
                             <Icon name="youtube" />
                         </a>
