@@ -23,9 +23,10 @@ const contacts = await getCollection("contacts");
 const title = "Adriaan.cc";
 const description =
     "Adriaan van der Bergh's personal website showcasing his experience, projects, and more.";
+const image = "images/adriaan_og.png";
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={image}>
     <Navbar />
     <Page id="about" title={title} color="green" rotation={1}>
         <Center>
