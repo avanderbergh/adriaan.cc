@@ -7,7 +7,8 @@
         "build": "astro check && astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "test": "vitest run"
+        "test": "vitest run",
+        "test-ci": "vitest run --reporter=junit --outputFile=junit.xml"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.4",
