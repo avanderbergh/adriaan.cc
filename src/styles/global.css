@@ -46,3 +46,33 @@ p {
     font-size: 16.5px;
     line-height: 22px;
 }
+
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0,
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    mix-blend-mode: multiply;
+    opacity: 0.15;
+    animation: scan 1s steps(60) infinite;
+}
+
+@keyframes scan {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 2px;
+    }
+}
