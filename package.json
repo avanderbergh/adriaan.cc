@@ -8,7 +8,8 @@
         "preview": "astro preview",
         "astro": "astro",
         "test": "vitest run",
-        "test-ci": "vitest run --reporter=junit --outputFile=junit.xml"
+        "test-ci": "vitest run --reporter=junit --outputFile=junit.xml",
+        "deploy": "wrangler deploy"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.4",
@@ -19,9 +20,6 @@
         "prettier": "3.3.3",
         "sharp": "^0.33.5",
         "vitest": "^3.2.1",
-        "wrangler": "^3.90.0"
-    },
-    "engines": {
-        "pnpm": "9.12.3"
+        "wrangler": "^4.0.0"
     }
 }
