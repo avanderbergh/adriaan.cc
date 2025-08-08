@@ -7,15 +7,5 @@
   "assets": {
     "directory": "dist",
     "not_found_handling": "404-page"
-  },
-  "vars": {
-    "PNPM_VERSION": "9.12.3"
-  },
-  "env": {
-    "production": {
-      "vars": {
-        "PNPM_VERSION": "9.12.3"
-      }
-    }
   }
 }
