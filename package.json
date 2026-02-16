@@ -19,7 +19,7 @@
     "devDependencies": {
         "prettier": "3.6.2",
         "sharp": "^0.34.4",
-        "vitest": "^3.2.4",
+        "vitest": "^4.0.18",
         "wrangler": "^4.64.0"
     }
 }
