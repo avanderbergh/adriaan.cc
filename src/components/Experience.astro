@@ -1,5 +1,5 @@
 ---
-import type { Experience } from "src/content/config";
+import type { Experience } from "src/content.config";
 
 type Props = Experience;
 
@@ -30,7 +30,7 @@ const { company, title, description, start, end, url, location } = Astro.props;
         <p>{start} - {end || "present"}</p>
     </div>
     <ul>
-        {description.map((d) => <li>{d}</li>)}
+        {description.map((d: string) => <li>{d}</li>)}
     </ul>
 </div>
 

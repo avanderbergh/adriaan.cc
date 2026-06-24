@@ -13,13 +13,32 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.9.5",
-        "astro": "5.15.6",
-        "typescript": "^5.9.3"
+        "astro": "6.4.8",
+        "typescript": "^5.9.3",
+        "zod": "^4.4.3"
     },
     "devDependencies": {
         "prettier": "3.6.2",
         "sharp": "^0.34.4",
-        "vitest": "^3.2.4",
+        "vitest": "4.1.9",
         "wrangler": "^4.64.0"
+    },
+    "pnpm": {
+        "overrides": {
+            "rollup": ">=4.59.0",
+            "undici": "7.28.0",
+            "ws": ">=8.21.0",
+            "mdast-util-to-hast": ">=13.2.1",
+            "ajv": ">=8.18.0",
+            "yaml": ">=2.8.3",
+            "postcss": ">=8.5.10",
+            "js-yaml": "4.2.0",
+            "esbuild": ">=0.28.1",
+            "lodash": ">=4.18.0",
+            "fast-uri": ">=3.1.2",
+            "micromatch>picomatch": ">=2.3.2",
+            "tinyglobby>picomatch": ">=4.0.4",
+            "anymatch>picomatch": ">=2.3.2"
+        }
     }
 }
