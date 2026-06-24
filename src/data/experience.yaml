@@ -1,10 +1,25 @@
+- slug: adesso-otto
+  title: Senior Software Engineer
+  company: adesso SE (at OTTO)
+  url: https://www.adesso.de/
+  location: Hamburg, Germany
+  start: May 1, 2025
+  end: Present
+  description:
+      - Employed by adesso SE; first client deployment at OTTO (GmbH & Co KG) via staff leasing (ANÜ).
+      - Developing product list and product tile delivery for otto.de and mobile apps in a high-traffic e-commerce environment.
+      - Cross-team collaboration with the OTTO AI chatbot team to integrate product cards from our domain into the chatbot.
+      - Introduced a BFF layer using Svelte and Node.js while migrating existing Spring Boot services from HTML-generating endpoints to JSON-based APIs.
+      - Intensive use of agentic AI coding workflows to accelerate analysis, implementation, refactoring, and technical exploration.
+      - Maintaining production services and contributing to CI/CD, Kafka, AWS, and PostgreSQL components.
+
 - slug: q15
   title: Founder & Lead Instructor
   company: Q15
   url: https://q15.co/
   location: Düsseldorf, Germany
   start: Nov 1, 2023
-  end: Present
+  end: Apr 30, 2025
   description:
       - Founded Q15 to help developers integrate AI into web applications, developing a unique full-stack AI course.
       - Developed a 4-month course covering AI models, web integration, Next.js, SQL, and CI/CD practices, designed to equip developers with modern AI integration skills.

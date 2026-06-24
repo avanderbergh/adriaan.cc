@@ -1,12 +1,13 @@
 import { file } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "zod";
 
 // Experience Schema and Collection
 const experienceSchema = z.object({
     slug: z.string(),
     title: z.string(),
     company: z.string(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     location: z.string(),
     start: z.string(),
     end: z.string().optional(),
@@ -44,7 +45,7 @@ const projects = defineCollection({
 // Education Schema and Collection
 const educationSchema = z.object({
     institution: z.string(),
-    url: z.string().url(),
+    url: z.url(),
     degree: z.string(),
     field: z.string(),
     start: z.number(),
@@ -60,7 +61,7 @@ const education = defineCollection({
 
 const contactsSchema = z.object({
     type: z.union([z.literal("linkedin"), z.literal("github")]),
-    url: z.string().url(),
+    url: z.url(),
 });
 
 const contacts = defineCollection({
