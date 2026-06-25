@@ -2,13 +2,14 @@
 const perforation = "dashed #ddd 1px";
 const paper = "#ffffff";
 
-type Colors = "green" | "blue" | "pink" | "yellow";
+type Colors = "white" | "canary" | "pink" | "blue";
 
 const colors: Record<Colors, string> = {
-    green: "#f0fff0",
-    blue: "#f0f2ff",
-    pink: "#fdf0ff",
-    yellow: "#fffde7",
+    // NCR carbon copy paper colors (white, canary, pink, blue)
+    white: "#f5f5f5",
+    canary: "#fff9c4",
+    pink: "#ffccbc",
+    blue: "#bbdefb",
 };
 
 interface Props {

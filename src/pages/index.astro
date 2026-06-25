@@ -28,7 +28,7 @@ const image = "images/adriaan_og.png";
 
 <BaseLayout title={title} description={description} image={image}>
     <Navbar />
-    <Page id="about" title={title} color="green" rotation={1}>
+    <Page id="about" title={title} color="white" rotation={1}>
         <Center>
             <Image
                 src={adriaan}
@@ -56,15 +56,15 @@ const image = "images/adriaan_og.png";
         </section>
     </Page>
 
-    <Page id="education" color="yellow" title="Education" rotation={1}>
+    <Page id="education" color="canary" title="Education" rotation={1}>
         {education.map(({ data }) => <Education {...data} />)}
     </Page>
 
-    <Page id="experience" color="blue" title="Experience" rotation={-1}>
+    <Page id="experience" color="pink" title="Experience" rotation={-1}>
         {experience.map(({ data }) => <Experience {...data} />)}
     </Page>
 
-    <Page id="projects" color="pink" title="Projects" rotation={0.8}>
+    <Page id="projects" color="blue" title="Projects" rotation={0.8}>
         <div class="projects-grid">
             {projects.map(({ data }) => <Project {...data} />)}
         </div>
