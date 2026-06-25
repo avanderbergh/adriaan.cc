@@ -1,3 +1,9 @@
+- slug: q15
+  title: q15
+  description: An open-source AI agent runtime built in Go. Designed to be self-hosted, extensible, and developer-friendly, with a skill system, semantic memory, and multi-provider support.
+  links:
+      github: https://github.com/q15co/q15
+
 - slug: octocoach
   title: OctoCoach
   description: A TypeScript-based platform for managing AZAV coaching businesses. This monorepo contains multiple applications and packages that work together to provide a comprehensive coaching management solution.
