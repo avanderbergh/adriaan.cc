@@ -1,6 +1,5 @@
 - slug: adesso-otto
   title: Senior Software Engineer
-  order: 1
   company: adesso SE (at OTTO)
   url: https://www.adesso.de/
   location: Hamburg, Germany
@@ -16,7 +15,6 @@
 
 - slug: q15
   title: Founder & Lead Instructor
-  order: 2
   company: Q15
   url: https://q15.co/
   location: Düsseldorf, Germany
@@ -31,7 +29,6 @@
 
 - slug: talent-digital
   title: Senior Software Engineer
-  order: 3
   company: talent::digital
   url: https://talentdigital.eu/
   location: Düsseldorf, Germany
@@ -46,7 +43,6 @@
 
 - slug: supercode
   title: Lead Software Engineer & Instructor
-  order: 4
   company: SuperCode
   url: https://www.super-code.de/
   location: Düsseldorf, Germany
@@ -59,7 +55,6 @@
 
 - slug: engagenie-inc
   title: Founder & Software Architect
-  order: 5
   company: Engagenie, Inc.
   location: US (remote)
   start: Apr 1, 2016
@@ -71,7 +66,6 @@
 
 - slug: international-school-of-duesseldorf
   title: Technology Integration Specialist & Educator
-  order: 6
   company: International School of Düsseldorf
   url: https://www.isdedu.de/
   location: Düsseldorf, Germany
@@ -85,7 +79,6 @@
 
 - slug: dexani
   title: IT Support Specialist
-  order: 7
   company: Dexani
   url: https://www.dexani.co.za/
   location: Johannesburg, South Africa
