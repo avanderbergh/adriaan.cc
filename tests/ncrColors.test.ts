@@ -38,7 +38,7 @@ const PAPER = "#ffffff";
 const ncrColors: Record<string, string> = {
     white: "#f5f5f5",
     canary: "#fff9c4",
-    pink: "#ffccbc",
+    pink: "#fcd5d5",
     blue: "#bbdefb",
 };
 

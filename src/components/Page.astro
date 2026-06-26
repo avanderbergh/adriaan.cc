@@ -1,14 +1,19 @@
 ---
-const perforation = "dashed #ccc 1px";
-
 type Colors = "white" | "canary" | "pink" | "blue";
 
 const colors: Record<Colors, string> = {
-    // NCR carbon copy paper colors (white, canary, pink, blue)
+    // NCR carbonless paper colors (white, canary, pink, blue)
     white: "#f5f5f5",
     canary: "#fff9c4",
-    pink: "#ffccbc",
+    pink: "#fcd5d5",
     blue: "#bbdefb",
+};
+
+const copyLabels: Record<Colors, string> = {
+    white: "ORIGINAL",
+    canary: "DUPLICATE",
+    pink: "TRIPLICATE",
+    blue: "QUADRUPLICATE",
 };
 
 interface Props {
@@ -22,9 +27,11 @@ interface Props {
 const { id, color, title, rotation, number } = Astro.props;
 
 const c = colors[color];
+const label = copyLabels[color];
+const seq = number ? String(number).padStart(4, "0") : "0001";
 ---
 
-<style define:vars={{ perforation, c }}>
+<style define:vars={{ c }}>
     .paper {
         position: relative;
         padding: var(--marginSize);
@@ -34,9 +41,7 @@ const c = colors[color];
         margin-bottom: var(--marginSize);
     }
 
-    .paper::before,
-    .paper::after {
-        content: "";
+    .strip {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -44,8 +49,8 @@ const c = colors[color];
         background: var(--c);
         background-image: radial-gradient(
             circle,
-            var(--bg) 30%,
-            var(--c) 31%
+            var(--bg) 28%,
+            var(--c) 29%
         );
         background-size: 10px 30px;
         background-repeat: repeat-y;
@@ -53,31 +58,69 @@ const c = colors[color];
         z-index: 1;
     }
 
-    .paper::before {
+    .strip-left {
         left: calc(var(--marginSize) * -1);
-        border-right: var(--perforation);
     }
 
-    .paper::after {
+    .strip-right {
         right: calc(var(--marginSize) * -1);
-        border-left: var(--perforation);
     }
 
-    .copy-number {
+    /* Micro-perforation line on the inner edge of each strip */
+    .strip-left::after,
+    .strip-right::after {
+        content: "";
         position: absolute;
-        left: calc(var(--marginSize) * -1 + 18px);
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-image: repeating-linear-gradient(
+            to bottom,
+            transparent 0 3px,
+            #999 3px 5px,
+            transparent 5px 8px
+        );
+    }
+
+    .strip-left::after {
+        right: 0;
+    }
+
+    .strip-right::after {
+        left: 0;
+    }
+
+    /* Small printed copy label on the left strip */
+    .strip-label {
+        position: absolute;
+        left: 50%;
         top: 50%;
-        transform: translateY(-50%) rotate(-90deg);
-        transform-origin: center;
-        font-size: 3.5rem;
-        font-weight: 700;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        white-space: nowrap;
+        font-size: 9px;
+        letter-spacing: 1px;
         color: var(--fg);
-        opacity: 0.2;
+        opacity: 0.45;
         z-index: 2;
         user-select: none;
         pointer-events: none;
+        text-align: center;
+    }
+
+    .strip-seq {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%) rotate(-90deg);
         white-space: nowrap;
-        letter-spacing: -2px;
+        font-size: 8px;
+        letter-spacing: 0.5px;
+        color: var(--fg);
+        opacity: 0.35;
+        z-index: 2;
+        user-select: none;
+        pointer-events: none;
+        text-align: center;
     }
 
     .title {
@@ -101,7 +144,12 @@ const c = colors[color];
 </style>
 
 <div class="paper" id={id} style={{ transform: `rotate(${rotation}deg)` }}>
-    {number && <span class="copy-number">{number}</span>}
+    <div class="strip strip-left">
+        <span class="strip-label">{label}</span>
+    </div>
+    <div class="strip strip-right">
+        <span class="strip-seq">N° {seq}</span>
+    </div>
     {title && <h1 class="title">{title}</h1>}
     <slot />
     <footer>
