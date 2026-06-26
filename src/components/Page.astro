@@ -31,6 +31,55 @@ const c = colors[color];
         margin-bottom: var(--marginSize);
     }
 
+    .strip {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        background: var(--c);
+        background-image: radial-gradient(
+            circle,
+            var(--bg) 28%,
+            var(--c) 29%
+        );
+        background-size: 10px 30px;
+        background-repeat: repeat-y;
+        background-position: center;
+        z-index: 1;
+    }
+
+    .strip-left {
+        left: calc(var(--marginSize) * -1);
+    }
+
+    .strip-right {
+        right: calc(var(--marginSize) * -1);
+    }
+
+    /* Micro-perforation line on the inner edge of each strip */
+    .strip-left::after,
+    .strip-right::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-image: repeating-linear-gradient(
+            to bottom,
+            transparent 0 3px,
+            #999 3px 5px,
+            transparent 5px 8px
+        );
+    }
+
+    .strip-left::after {
+        right: 0;
+    }
+
+    .strip-right::after {
+        left: 0;
+    }
+
     .title {
         text-wrap: nowrap;
         text-align: center;
@@ -52,6 +101,8 @@ const c = colors[color];
 </style>
 
 <div class="paper" id={id} style={{ transform: `rotate(${rotation}deg)` }}>
+    <div class="strip strip-left"></div>
+    <div class="strip strip-right"></div>
     {title && <h1 class="title">{title}</h1>}
     <slot />
     <footer>
