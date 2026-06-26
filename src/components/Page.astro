@@ -9,26 +9,16 @@ const colors: Record<Colors, string> = {
     blue: "#bbdefb",
 };
 
-const copyLabels: Record<Colors, string> = {
-    white: "ORIGINAL",
-    canary: "DUPLICATE",
-    pink: "TRIPLICATE",
-    blue: "QUADRUPLICATE",
-};
-
 interface Props {
     id: string;
     color: Colors;
     title?: string;
     rotation: number;
-    number?: number;
 }
 
-const { id, color, title, rotation, number } = Astro.props;
+const { id, color, title, rotation } = Astro.props;
 
 const c = colors[color];
-const label = copyLabels[color];
-const seq = number ? String(number).padStart(4, "0") : "0001";
 ---
 
 <style define:vars={{ c }}>
@@ -39,88 +29,6 @@ const seq = number ? String(number).padStart(4, "0") : "0001";
         width: calc(100% - var(--marginSize) * 2);
         max-width: 920px;
         margin-bottom: var(--marginSize);
-    }
-
-    .strip {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20px;
-        background: var(--c);
-        background-image: radial-gradient(
-            circle,
-            var(--bg) 28%,
-            var(--c) 29%
-        );
-        background-size: 10px 30px;
-        background-repeat: repeat-y;
-        background-position: center;
-        z-index: 1;
-    }
-
-    .strip-left {
-        left: calc(var(--marginSize) * -1);
-    }
-
-    .strip-right {
-        right: calc(var(--marginSize) * -1);
-    }
-
-    /* Micro-perforation line on the inner edge of each strip */
-    .strip-left::after,
-    .strip-right::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background-image: repeating-linear-gradient(
-            to bottom,
-            transparent 0 3px,
-            #999 3px 5px,
-            transparent 5px 8px
-        );
-    }
-
-    .strip-left::after {
-        right: 0;
-    }
-
-    .strip-right::after {
-        left: 0;
-    }
-
-    /* Small printed copy label on the left strip, near inner edge (away from holes) */
-    .strip-label {
-        position: absolute;
-        right: 2px;
-        top: 50%;
-        transform: translateY(-50%) rotate(-90deg);
-        white-space: nowrap;
-        font-size: 9px;
-        letter-spacing: 1px;
-        color: var(--fg);
-        opacity: 0.45;
-        z-index: 2;
-        user-select: none;
-        pointer-events: none;
-        text-align: center;
-    }
-
-    .strip-seq {
-        position: absolute;
-        left: 2px;
-        top: 50%;
-        transform: translateY(-50%) rotate(-90deg);
-        white-space: nowrap;
-        font-size: 8px;
-        letter-spacing: 0.5px;
-        color: var(--fg);
-        opacity: 0.35;
-        z-index: 2;
-        user-select: none;
-        pointer-events: none;
-        text-align: center;
     }
 
     .title {
@@ -144,12 +52,6 @@ const seq = number ? String(number).padStart(4, "0") : "0001";
 </style>
 
 <div class="paper" id={id} style={{ transform: `rotate(${rotation}deg)` }}>
-    <div class="strip strip-left">
-        <span class="strip-label">{label}</span>
-    </div>
-    <div class="strip strip-right">
-        <span class="strip-seq">N° {seq}</span>
-    </div>
     {title && <h1 class="title">{title}</h1>}
     <slot />
     <footer>
