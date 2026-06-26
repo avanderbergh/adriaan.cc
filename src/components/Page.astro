@@ -90,12 +90,12 @@ const seq = number ? String(number).padStart(4, "0") : "0001";
         left: 0;
     }
 
-    /* Small printed copy label on the left strip */
+    /* Small printed copy label on the left strip, near inner edge (away from holes) */
     .strip-label {
         position: absolute;
-        left: 50%;
+        right: 2px;
         top: 50%;
-        transform: translate(-50%, -50%) rotate(-90deg);
+        transform: translateY(-50%) rotate(-90deg);
         white-space: nowrap;
         font-size: 9px;
         letter-spacing: 1px;
@@ -109,9 +109,9 @@ const seq = number ? String(number).padStart(4, "0") : "0001";
 
     .strip-seq {
         position: absolute;
-        right: 50%;
+        left: 2px;
         top: 50%;
-        transform: translate(50%, -50%) rotate(-90deg);
+        transform: translateY(-50%) rotate(-90deg);
         white-space: nowrap;
         font-size: 8px;
         letter-spacing: 0.5px;
