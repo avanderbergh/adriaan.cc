@@ -1,6 +1,5 @@
 ---
-const perforation = "dashed #ddd 1px";
-const paper = "#ffffff";
+const perforation = "dashed #ccc 1px";
 
 type Colors = "white" | "canary" | "pink" | "blue";
 
@@ -17,19 +16,19 @@ interface Props {
     color: Colors;
     title?: string;
     rotation: number;
+    number?: number;
 }
 
-const { id, color, title, rotation } = Astro.props;
+const { id, color, title, rotation, number } = Astro.props;
 
 const c = colors[color];
 ---
 
-<style define:vars={{ perforation, paper, c }}>
+<style define:vars={{ perforation, c }}>
     .paper {
         position: relative;
         padding: var(--marginSize);
-        background: linear-gradient(var(--paper) 50%, var(--c) 50%);
-        background-size: 100% calc(var(--marginSize) * 2);
+        background: var(--c);
         width: calc(100% - var(--marginSize) * 2);
         max-width: 920px;
         margin-bottom: var(--marginSize);
@@ -42,11 +41,11 @@ const c = colors[color];
         top: 0;
         bottom: 0;
         width: 20px;
-        background: var(--paper);
+        background: var(--c);
         background-image: radial-gradient(
             circle,
             var(--bg) 30%,
-            var(--paper) 31%
+            var(--c) 31%
         );
         background-size: 10px 30px;
         background-repeat: repeat-y;
@@ -62,6 +61,23 @@ const c = colors[color];
     .paper::after {
         right: calc(var(--marginSize) * -1);
         border-left: var(--perforation);
+    }
+
+    .copy-number {
+        position: absolute;
+        left: calc(var(--marginSize) * -1 + 18px);
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        transform-origin: center;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--fg);
+        opacity: 0.2;
+        z-index: 2;
+        user-select: none;
+        pointer-events: none;
+        white-space: nowrap;
+        letter-spacing: -2px;
     }
 
     .title {
@@ -85,6 +101,7 @@ const c = colors[color];
 </style>
 
 <div class="paper" id={id} style={{ transform: `rotate(${rotation}deg)` }}>
+    {number && <span class="copy-number">{number}</span>}
     {title && <h1 class="title">{title}</h1>}
     <slot />
     <footer>
