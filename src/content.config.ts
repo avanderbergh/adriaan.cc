@@ -11,6 +11,7 @@ const experienceSchema = z.object({
     location: z.string(),
     start: z.string(),
     end: z.string().optional(),
+    order: z.number().default(99),
     description: z.array(z.string()),
 });
 
