@@ -9,7 +9,10 @@
         "astro": "astro",
         "test": "vitest run",
         "test-ci": "vitest run --reporter=junit --outputFile=junit.xml",
-        "deploy": "wrangler deploy"
+        "deploy": "wrangler deploy",
+        "check": "prettier --check . && eslint . && astro check",
+        "format": "prettier --write .",
+        "lint": "eslint . --fix"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.9",
@@ -18,8 +21,15 @@
         "zod": "^4.4.3"
     },
     "devDependencies": {
+        "@eslint/js": "^9.39.4",
+        "astro-eslint-parser": "^1.4.0",
+        "eslint": "^9.39.4",
+        "eslint-plugin-astro": "^1.7.0",
+        "globals": "^17.7.0",
         "prettier": "3.6.2",
+        "prettier-plugin-astro": "^0.14.1",
         "sharp": "^0.35.2",
+        "typescript-eslint": "^8.62.0",
         "vitest": "4.1.9",
         "wrangler": "^4.104.0"
     }
