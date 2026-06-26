@@ -1,17 +1,20 @@
 - slug: q15
   title: q15
+  order: 1
   description: An open-source AI agent runtime built in Go. Designed to be self-hosted, extensible, and developer-friendly, with a skill system, semantic memory, and multi-provider support.
   links:
       github: https://github.com/q15co/q15
 
 - slug: octocoach
   title: OctoCoach
+  order: 2
   description: A TypeScript-based platform for managing AZAV coaching businesses. This monorepo contains multiple applications and packages that work together to provide a comprehensive coaching management solution.
   links:
       github: https://github.com/octocoach/octocoach
 
 - slug: code-city
   title: Code City
+  order: 3
   description: A cooperative game to help users learn coding, playable in both a web browser and Oculus Quest. Focuses on making coding fun and interactive, bridging VR and web experiences.
   links:
       github: https://github.com/avanderbergh/codecity
@@ -19,30 +22,35 @@
 
 - slug: lapsly
   title: Lapsly
+  order: 4
   description: A tool for teachers to assess students' learning processes by creating time-lapse videos of their work. Helps teachers understand how students approach tasks, providing insights beyond the final product.
   links:
       youTube: https://youtu.be/WCCabk230Os
 
 - slug: alo-app
   title: ALO App
+  order: 5
   description: A platform for students to discover and join extra learning opportunities offered by peers and teachers. Encourages collaborative learning and broadens educational experiences.
   links:
       github: https://github.com/avanderbergh/isd-alo
 
 - slug: managebac-api-library
   title: ManageBac API Library
+  order: 6
   description: A PHP client library for the ManageBac API, built to streamline integration for schools using ManageBac.
   links:
       github: https://github.com/eduvo/PHP-API-Library
 
 - slug: overview
   title: Overview
+  order: 7
   description: A tool for US school districts that visualizes learning outcomes across courses, helping educators make data-driven decisions to improve teaching and student results.
   links:
       github: https://github.com/avanderbergh/overview
 
 - slug: drive-companion
   title: Drive Companion
+  order: 8
   description: A Google Drive integration tool for Schoology that improves usability beyond the default integration, making file sharing simpler and more effective for teachers and students.
   links:
       github: https://github.com/avanderbergh/drivecompanion
@@ -50,6 +58,7 @@
 
 - slug: gamifikator
   title: Gamifikator
+  order: 9
   description: A web app for teachers on Schoology to gamify learning. Makes class activities more engaging by incorporating points and rewards for students.
   links:
       youTube: https://youtu.be/Zg4a9aDJaUY

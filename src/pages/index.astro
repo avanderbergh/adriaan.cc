@@ -16,7 +16,9 @@ import Icon from "@components/Icon.astro";
 import Footer from "@components/Footer.astro";
 
 const experience = await getCollection("experience");
-const projects = await getCollection("projects");
+const projects = (await getCollection("projects")).sort(
+    (a, b) => a.data.order - b.data.order,
+);
 const education = await getCollection("education");
 const contacts = await getCollection("contacts");
 

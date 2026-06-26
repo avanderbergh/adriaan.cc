@@ -27,6 +27,7 @@ const projectSchema = z.object({
     slug: z.string(),
     title: z.string(),
     description: z.string(),
+    order: z.number().default(99),
     links: z
         .object({
             github: z.string().optional(),
