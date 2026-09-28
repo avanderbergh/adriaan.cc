@@ -1,5 +1,5 @@
 {
-  "packageManager": "pnpm@12.3.4",
+    "packageManager": "pnpm@12.3.4",
     "name": "adriaan-cc",
     "type": "module",
     "version": "1.0.1",
@@ -17,7 +17,7 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.9.9",
-        "astro": "7.1.1",
+        "astro": "7.2.8",
         "typescript": "^5.9.3",
         "zod": "^4.4.3"
     },
@@ -31,7 +31,7 @@
         "prettier-plugin-astro": "^0.14.1",
         "sharp": "^0.35.2",
         "typescript-eslint": "^8.62.0",
-        "vitest": "4.1.9",
+        "vitest": "4.1.11",
         "wrangler": "^4.104.0"
     }
 }
