@@ -1,17 +1,30 @@
+- slug: adesso-mobile-de
+  title: Senior Software Engineer
+  company: adesso SE (at mobile.de)
+  url: https://www.adesso.de/
+  location: Germany (remote)
+  start: June 2026
+  description:
+      - Employed by adesso SE; second client deployment, on the mobile.de (Adevinta) account.
+      - Lead developer for the Germany-based side of a distributed engagement team, working with smartshore developers and new joiners.
+      - First point of contact for mobile.de stakeholders, and organiser of the team's engineering cadence.
+      - Enabling the team's day-to-day use of agentic AI workflows across analysis, implementation and review.
+      - Working across the client's stack, including React, Java/Spring Boot, Kafka and AWS.
+
 - slug: adesso-otto
   title: Senior Software Engineer
   company: adesso SE (at OTTO)
   url: https://www.adesso.de/
   location: Hamburg, Germany
   start: May 1, 2025
-  end: Present
+  end: February 28, 2026
   description:
       - Employed by adesso SE; first client deployment at OTTO (GmbH & Co KG) via staff leasing (ANÜ).
-      - Developing product list and product tile delivery for otto.de and mobile apps in a high-traffic e-commerce environment.
-      - Cross-team collaboration with the OTTO AI chatbot team to integrate product cards from our domain into the chatbot.
+      - Developed product list and product tile delivery for otto.de and mobile apps in a high-traffic e-commerce environment.
+      - Collaborated cross-team with the OTTO AI chatbot team to integrate product cards from our domain into the chatbot.
       - Introduced a BFF layer using Svelte and Node.js while migrating existing Spring Boot services from HTML-generating endpoints to JSON-based APIs.
-      - Intensive use of agentic AI coding workflows to accelerate analysis, implementation, refactoring, and technical exploration.
-      - Maintaining production services and contributing to CI/CD, Kafka, AWS, and PostgreSQL components.
+      - Used agentic AI coding workflows intensively to accelerate analysis, implementation, refactoring, and technical exploration.
+      - Maintained production services and contributed to CI/CD, Kafka, AWS, and PostgreSQL components.
 
 - slug: q15
   title: Founder & Lead Instructor
